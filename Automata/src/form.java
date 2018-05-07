@@ -18,10 +18,10 @@ public class form {
 
     String index = "0";
 
-    char genderChar = ' ';
-    char typeChar = ' ';
-    char colorChar = ' ';
-    char sizeChar = ' ';
+    String genderChar = "";
+    String typeChar = "";
+    String colorChar = "";
+    String sizeChar = "";
 
     String temp = "";
     String sNewIndex = "";
@@ -42,6 +42,7 @@ public class form {
                     genderSelected = genderBox.getSelectedItem().toString();
                     typeSelected = typeBpx.getSelectedItem().toString();
                     colorSelected = colorBox.getSelectedItem().toString();
+                    System.out.println(colorSelected);
                     sizeSelected = sizeBox.getSelectedItem().toString();
 
                     genderChar = checkSelection(genderSelected);
@@ -77,21 +78,27 @@ public class form {
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Subject Petition");
+        JFrame frame = new JFrame("Sample");
         frame.setContentPane(new form().panel1);
         frame.pack();
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    public char checkSelection(String input){
+    public String checkSelection(String input){
         String sTemp = input;
 
         if (sTemp.isEmpty()){
-            return 'X';
-        } else {
-            return sTemp.charAt(0);
+            return "X";
+        } else if(sTemp.matches("[' ']")){ // not yet functional
+            String[] aTemp = sTemp.split("[ ]");
+            for(int i = 0; aTemp.length > i; i++){
+                System.out.println(aTemp[i]);
+                sTemp += aTemp[i].charAt(0);
+            }
+            return sTemp;
         }
+        return sTemp.charAt(0) + "";
     }
 
 }
