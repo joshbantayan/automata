@@ -3,13 +3,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class form {
-    private JPanel panel1;
-    private JComboBox genderBox;
-    private JComboBox typeBpx;
-    private JComboBox colorBox;
-    private JComboBox sizeBox;
-    private JTextField productCodeField;
-    private JButton generateProductCodeButton;
+    public JPanel panel1;
+    public JComboBox genderBox;
+    public JComboBox typeBpx;
+    public JComboBox colorBox;
+    public JComboBox sizeBox;
+    public JTextField productCodeField;
+    public JButton generateProductCodeButton;
 
     String genderSelected = "";
     String typeSelected = "";
@@ -79,13 +79,7 @@ public class form {
 
     }
 
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Sample");
-        frame.setContentPane(new form().panel1);
-        frame.pack();
-        frame.setVisible(true);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
+
 
     public String checkSelection(String input){
         String sTemp = input;
