@@ -27,6 +27,8 @@ public class form {
     String sNewIndex = "";
     int iNewIndex = 0;
 
+    boolean accepting = false;
+
 
     public form() {
 
@@ -100,5 +102,8 @@ public class form {
         }
         return sTemp.charAt(0) + "";
     }
+
+
+
 
 }
