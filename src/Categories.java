@@ -5,17 +5,10 @@ import java.awt.event.ActionListener;
 public class Categories {
     public JPanel Categories;
     public JButton healthAndBeutyButton;
-    public JButton homeAndLifestyleButton;
-    public JButton electronicDevicesButton;
-    public JButton electronicAccessoriesButton;
-    public JButton TVAndHomeAppliencesButton;
-    public JButton babiesAndToysButton;
-    public JButton groceriesAndPetsButton;
+    public JButton electronicsButton;
     public JButton clothesButton;
     public JButton shoesButton;
     public JButton fashionAccessoriesButton;
-    public JButton sportsAndTravelButton;
-    public JButton outdoorButton;
 
     public Categories() {
         clothesButton.addActionListener(new ActionListener() {
