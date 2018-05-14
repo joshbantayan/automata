@@ -59,25 +59,25 @@
               <grid row="5" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
             </constraints>
           </vspacer>
-          <component id="e6674" class="javax.swing.JComboBox">
+          <component id="e6674" class="javax.swing.JComboBox" binding="typeBox">
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <model>
                 <item value=""/>
-                <item value="moisturizer"/>
-                <item value="foundation"/>
-                <item value="bb cream"/>
-                <item value="lipsick"/>
-                <item value="blush"/>
-                <item value="brush"/>
-                <item value="pencil"/>
-                <item value="pallet"/>
+                <item value="Moisturizer"/>
+                <item value="Foundation"/>
+                <item value="Bb Cream"/>
+                <item value="Lipsick"/>
+                <item value="Blush"/>
+                <item value="Brush"/>
+                <item value="Pencil"/>
+                <item value="Pallet"/>
               </model>
             </properties>
           </component>
-          <component id="1698d" class="javax.swing.JComboBox">
+          <component id="1698d" class="javax.swing.JComboBox" binding="brandBox">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -94,20 +94,20 @@
               </model>
             </properties>
           </component>
-          <component id="eed3a" class="javax.swing.JComboBox">
+          <component id="eed3a" class="javax.swing.JComboBox" binding="toneBox">
             <constraints>
               <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <model>
                 <item value=""/>
-                <item value="light"/>
-                <item value="moderate"/>
-                <item value="dark"/>
+                <item value="Light"/>
+                <item value="Moderate"/>
+                <item value="Dark"/>
               </model>
             </properties>
           </component>
-          <component id="e374b" class="javax.swing.JComboBox">
+          <component id="e374b" class="javax.swing.JComboBox" binding="coverageBox">
             <constraints>
               <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -129,7 +129,7 @@
               <text value="Product Code: "/>
             </properties>
           </component>
-          <component id="8ccfb" class="javax.swing.JTextField">
+          <component id="8ccfb" class="javax.swing.JTextField" binding="productCodeField">
             <constraints>
               <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -139,7 +139,7 @@
               <editable value="false"/>
             </properties>
           </component>
-          <component id="a6c16" class="javax.swing.JButton" default-binding="true">
+          <component id="a6c16" class="javax.swing.JButton" binding="generateProductCodeButton">
             <constraints>
               <grid row="6" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>

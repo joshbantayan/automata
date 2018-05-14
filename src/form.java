@@ -11,20 +11,21 @@ public class form {
     public JTextField productCodeField;
     public JButton generateProductCodeButton;
 
+    private String code = "C-";
+
     private String genderSelected = "";
     private String typeSelected = "";
     private String colorSelected = "";
     private String sizeSelected = "";
 
     private String index = "0";
-    private int state = 1;
+    private int state = 2;
 
     private String genderChar = "";
     private String typeChar = "";
     private String colorChar = "";
     private String sizeChar = "";
 
-    private String temp = "";
     private String sNewIndex = "";
     private int iNewIndex = 0;
 
@@ -163,7 +164,7 @@ public class form {
 
     private void generateProductCode(String currentIndex){
         try{
-            String code, temp = "";
+            String temp = "";
             int currentState = state;
             sNewIndex = currentIndex;
             iNewIndex = Integer.parseInt(sNewIndex);
@@ -184,7 +185,7 @@ public class form {
                         if(nextState){
                             currentState++;
                             sizeSelected = checkInputToString(sizeBox);
-                            isAccepting(currentState);
+                            accepting = isAccepting(currentState);
                             if(accepting){
                                 temp = generateCode(genderSelected, typeSelected, colorSelected, sizeSelected);
                                 if(iNewIndex == 0){
@@ -204,16 +205,16 @@ public class form {
                                 System.exit(0);
                             }
                         } else {
-                            JOptionPane.showMessageDialog(null, "Insufficient input, Please choose a size");
+                            JOptionPane.showMessageDialog(null, "Insufficient input, Please choose a size.");
                         }
                     } else {
-                        JOptionPane.showMessageDialog(null, "Insufficient input, Please choose a color");
+                        JOptionPane.showMessageDialog(null, "Insufficient input, Please choose a color.");
                     }
                 } else {
-                    JOptionPane.showMessageDialog(null, "Insufficient input, Please choose a type");
+                    JOptionPane.showMessageDialog(null, "Insufficient input, Please choose a type.");
                 }
             } else {
-                JOptionPane.showMessageDialog(null, "Insufficient input, Please choose a gender");
+                JOptionPane.showMessageDialog(null, "Insufficient input, Please choose a gender.");
             }
         }catch(Exception e){
             e.printStackTrace();
@@ -221,10 +222,12 @@ public class form {
         }
     }
 
-    private void isAccepting(int currState){
-        if(currState == 5){
-            accepting = true;
+    private boolean isAccepting(int currState){
+        boolean temp = false;
+        if(currState == 6){
+            temp = true;
         }
+        return temp;
     }
 
     private boolean checkInput(JComboBox input){
