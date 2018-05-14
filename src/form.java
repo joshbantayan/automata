@@ -3,13 +3,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class form {
-    private JPanel panel1;
-    private JComboBox genderBox;
-    private JComboBox typeBpx;
-    private JComboBox colorBox;
-    private JComboBox sizeBox;
-    private JTextField productCodeField;
-    private JButton generateProductCodeButton;
+    public JPanel panel1;
+    public JComboBox genderBox;
+    public JComboBox typeBpx;
+    public JComboBox colorBox;
+    public JComboBox sizeBox;
+    public JTextField productCodeField;
+    public JButton generateProductCodeButton;
 
     private String genderSelected = "";
     private String typeSelected = "";
