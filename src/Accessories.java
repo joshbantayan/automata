@@ -11,8 +11,6 @@ public class Accessories {
     private JButton generateProductCodeButton;
     private JTextField productCodeField;
 
-    private String code = "A-";
-
     private String typeSelected = "";
     private String materialSelected = "";
     private String genderSelected = "";
@@ -45,13 +43,14 @@ public class Accessories {
                     generateProductCode(sNewIndex);
                 } catch (Exception err) {
                     err.printStackTrace();
+                    System.exit(0);
                 }
             }
         });
     }
     private void generateProductCode(String currentIndex){
         try{
-            String temp = "";
+            String code, temp = "";
             int currentState = state;
             sNewIndex = currentIndex;
             iNewIndex = Integer.parseInt(sNewIndex);
@@ -77,12 +76,12 @@ public class Accessories {
                                 temp = generateCode(typeSelected, materialSelected, genderSelected, sizeSelected);
                                 if(iNewIndex == 0){
                                     sNewIndex = String.format("%04d", iNewIndex);
-                                    code = temp +"-"+ sNewIndex;
+                                    code = "A-" + temp +"-"+ sNewIndex;
                                     iNewIndex = Integer.parseInt(sNewIndex) + 1;
                                     sNewIndex = String.valueOf(iNewIndex);
                                 } else {
                                     sNewIndex = String.format("%04d", iNewIndex);
-                                    code = temp +"-"+ sNewIndex;
+                                    code = "A-" + temp +"-"+ sNewIndex;
                                     iNewIndex = Integer.parseInt(sNewIndex) + 1;
                                     sNewIndex = String.valueOf(iNewIndex);
                                 }

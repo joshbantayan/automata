@@ -11,8 +11,6 @@ public class form {
     public JTextField productCodeField;
     public JButton generateProductCodeButton;
 
-    private String code = "C-";
-
     private String genderSelected = "";
     private String typeSelected = "";
     private String colorSelected = "";
@@ -42,39 +40,8 @@ public class form {
         generateProductCodeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
                 try{
-
                     generateProductCode(sNewIndex);
-
-//
-//                    genderSelected = genderBox.getSelectedItem().toString();
-//                    typeSelected = typeBpx.getSelectedItem().toString();
-//                    colorSelected = colorBox.getSelectedItem().toString();
-//                    sizeSelected = sizeBox.getSelectedItem().toString();
-//
-//                    genderChar = checkSelection(genderSelected);
-//                    typeChar = checkSelection(typeSelected);
-//                    colorChar = checkSelection(colorSelected);
-//                    sizeChar = checkSelection(sizeSelected);
-//
-//                    if(iNewIndex == 0){
-//                        sNewIndex = String.format("%04d", iNewIndex);
-//                        temp = genderChar +"-"+ typeChar +"-"+ colorChar +"-"+ sizeChar +"-"+ sNewIndex;
-//                        iNewIndex = Integer.parseInt(sNewIndex) + 1;
-//                        sNewIndex = String.valueOf(iNewIndex);
-//                    } else if(iNewIndex == 1) {
-//                        sNewIndex = String.format("%04d", iNewIndex);
-//                        temp = genderChar +"-"+ typeChar +"-"+ colorChar +"-"+ sizeChar +"-"+ sNewIndex;
-//                        iNewIndex = Integer.parseInt(sNewIndex) + 1;
-//                    } else {
-//                        iNewIndex = Integer.parseInt(sNewIndex) + 1;
-//                        sNewIndex = String.format("%04d", iNewIndex);
-//                        temp = genderChar +"-"+ typeChar +"-"+ colorChar +"-"+ sizeChar +"-"+ sNewIndex;
-//                    }
-//
-//                    productCodeField.setText(temp);
-
                 }catch (Exception err){
                     err.printStackTrace();
                     System.exit(0);
@@ -84,37 +51,6 @@ public class form {
         });
 
     }
-
-//    private String checkSelection(String input){
-//        String sTemp = input;
-//
-//        if (sTemp.isEmpty()){
-//            return "X";
-//        } else if(sTemp.matches("[ ]")){ // not yet functional
-//            String[] aTemp = sTemp.split("[ ]");
-//            for(int i = 0; aTemp.length > i; i++){
-//                System.out.println(aTemp[i]);
-//                sTemp += aTemp[i].charAt(0);
-//            }
-//            return sTemp;
-//        }
-//        return sTemp.charAt(0) + "";
-//    }
-
-//    private void checkState(String gender, String type, String color, String size, boolean accept){
-//        if(gender != null){
-//            state++; // state = 1
-//            accept = false;
-//            if(type != null) {
-//                state++; // state = 2
-//                accept = false;
-//                if(color != null){
-//                    state++;
-//                    accept = false;
-//                }
-//            }
-//        }
-//    }
 
     /*
     * Finite State Automaton
@@ -164,7 +100,7 @@ public class form {
 
     private void generateProductCode(String currentIndex){
         try{
-            String temp = "";
+            String code, temp = "";
             int currentState = state;
             sNewIndex = currentIndex;
             iNewIndex = Integer.parseInt(sNewIndex);
@@ -190,12 +126,12 @@ public class form {
                                 temp = generateCode(genderSelected, typeSelected, colorSelected, sizeSelected);
                                 if(iNewIndex == 0){
                                     sNewIndex = String.format("%04d", iNewIndex);
-                                    code = temp +"-"+ sNewIndex;
+                                    code = "C-" + temp +"-"+ sNewIndex;
                                     iNewIndex = Integer.parseInt(sNewIndex) + 1;
                                     sNewIndex = String.valueOf(iNewIndex);
                                 } else {
                                     sNewIndex = String.format("%04d", iNewIndex);
-                                    code = temp +"-"+ sNewIndex;
+                                    code = "C-" + temp +"-"+ sNewIndex;
                                     iNewIndex = Integer.parseInt(sNewIndex) + 1;
                                     sNewIndex = String.valueOf(iNewIndex);
                                 }

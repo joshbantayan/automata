@@ -11,8 +11,6 @@ public class Electronics {
     private JTextField productCodeField;
     private JButton generateProductCodeButton;
 
-    private String code = "E-";
-
     private String typeSelected = "";
     private String brandSelected = "";
     private String performanceSelected = "";
@@ -46,14 +44,14 @@ public class Electronics {
                     generateProductCode(sNewIndex);
                 } catch (Exception err) {
                     err.printStackTrace();
+                    System.exit(0);
                 }
-
             }
         });
     }
     private void generateProductCode(String currentIndex){
         try{
-            String temp = "";
+            String code, temp = "";
             int currentState = state;
             sNewIndex = currentIndex;
             iNewIndex = Integer.parseInt(sNewIndex);
@@ -79,12 +77,12 @@ public class Electronics {
                                 temp = generateCode(typeSelected, brandSelected, performanceSelected, colorSelected);
                                 if(iNewIndex == 0){
                                     sNewIndex = String.format("%04d", iNewIndex);
-                                    code = temp +"-"+ sNewIndex;
+                                    code = "E-" + temp +"-"+ sNewIndex;
                                     iNewIndex = Integer.parseInt(sNewIndex) + 1;
                                     sNewIndex = String.valueOf(iNewIndex);
                                 } else {
                                     sNewIndex = String.format("%04d", iNewIndex);
-                                    code = temp +"-"+ sNewIndex;
+                                    code = "E-" + temp +"-"+ sNewIndex;
                                     iNewIndex = Integer.parseInt(sNewIndex) + 1;
                                     sNewIndex = String.valueOf(iNewIndex);
                                 }

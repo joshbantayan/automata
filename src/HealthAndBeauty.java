@@ -11,8 +11,6 @@ public class HealthAndBeauty {
     private JButton generateProductCodeButton;
     private JTextField productCodeField;
 
-    private String code = "HaB-";
-
     private String typeSelected = "";
     private String brandSelected = "";
     private String toneSelected = "";
@@ -46,13 +44,14 @@ public class HealthAndBeauty {
                     generateProductCode(sNewIndex);
                 } catch (Exception err) {
                     err.printStackTrace();
+                    System.exit(0);
                 }
             }
         });
     }
     private void generateProductCode(String currentIndex){
         try{
-            String temp = "";
+            String code, temp = "";
             int currentState = state;
             sNewIndex = currentIndex;
             iNewIndex = Integer.parseInt(sNewIndex);
@@ -78,12 +77,12 @@ public class HealthAndBeauty {
                                 temp = generateCode(typeSelected, brandSelected, toneSelected, coverageSelected);
                                 if(iNewIndex == 0){
                                     sNewIndex = String.format("%04d", iNewIndex);
-                                    code = temp +"-"+ sNewIndex;
+                                    code = "HaB-" + temp +"-"+ sNewIndex;
                                     iNewIndex = Integer.parseInt(sNewIndex) + 1;
                                     sNewIndex = String.valueOf(iNewIndex);
                                 } else {
                                     sNewIndex = String.format("%04d", iNewIndex);
-                                    code = temp +"-"+ sNewIndex;
+                                    code = "HaB-" + temp +"-"+ sNewIndex;
                                     iNewIndex = Integer.parseInt(sNewIndex) + 1;
                                     sNewIndex = String.valueOf(iNewIndex);
                                 }
